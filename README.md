@@ -1,29 +1,12 @@
 # impacta-quiz
 
-assunto1
-assunto2
-assunto3
-assunto4
-assunto5
+## Entidades:
+- pessoa
+- assunto
+- pergunta
+- historico
 
-
-
-Pergunta 1.....
-1) Resposta 1
-2) Resposta 2
-3) Resposta 3 (verdadeira)
-
-
-
-Historico
-Joao - Assunto1 - pergunta2 - resposta3 - acertou
-Joao - Assunto1 - pergunta2 - resposta3 - acertou
-Joao - Assunto1 - pergunta2 - resposta3 - acertou
-Joao - Assunto1 - pergunta2 - resposta3 - acertou
-Joao - Assunto1 - pergunta2 - resposta3 - acertou
-
-
-Entidades?
+## Descritivo das Entidades
 pessoa
   - id
   - nome (joao mascarenhas fdsfsdafas)
