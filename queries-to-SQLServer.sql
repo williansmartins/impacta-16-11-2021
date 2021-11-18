@@ -1,0 +1,40 @@
+
+CREATE TABLE PESSOA
+(
+    id INTEGER PRIMARY KEY IDENTITY,
+    nome VARCHAR(max) NOT NULL
+);
+
+
+CREATE TABLE ASSUNTO
+(
+    id INTEGER PRIMARY KEY IDENTITY,
+    tema VARCHAR(100) NOT NULL,
+    assunto VARCHAR(100) NOT NULL
+);
+
+
+CREATE TABLE PERGUNTA
+(
+    id INTEGER PRIMARY KEY IDENTITY,
+    titulo VARCHAR(255) NOT NULL,
+    resposta1 VARCHAR(255) NOT NULL,
+    resposta2 VARCHAR(255) NOT NULL,
+    resposta3 VARCHAR(255) NOT NULL,
+    correta INTEGER NOT NULL,
+    assunto_id INTEGER NOT NULL,
+
+    FOREIGN KEY (assunto_id) REFERENCES ASSUNTO(id)
+);
+
+
+CREATE TABLE HISTORICO
+(
+    pessoa_id INTEGER NOT NULL,
+    pergunta_id INTEGER NOT NULL,
+    resposta INTEGER,
+
+
+    FOREIGN KEY (pessoa_id) REFERENCES PESSOA(id),
+    FOREIGN KEY (pergunta_id) REFERENCES PERGUNTA(id)
+);
