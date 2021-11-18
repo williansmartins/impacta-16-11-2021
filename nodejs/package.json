@@ -1,0 +1,21 @@
+{
+  "name": "nodejs",
+  "version": "0.0.1",
+  "description": "aulas de nodejs para turma da impacta",
+  "main": "conexao-mysql.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "filesystem",
+    "quiz",
+    "perguntas"
+  ],
+  "author": "Willians Martins de Morais",
+  "license": "ISC",
+  "dependencies": {
+    "mssql": "^7.2.1",
+    "mysql": "^2.18.1"
+  }
+}
