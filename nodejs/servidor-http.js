@@ -14,5 +14,3 @@ var requisicao = function (request, response) {
  }
 
  server.listen(4000, resultado);
-
- 
