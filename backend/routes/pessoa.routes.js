@@ -1,9 +1,16 @@
 module.exports = function(app){
     var router = require("express").Router();
 
-    router.get("/", (req, res) => {
-        res.json({ message: "nova rota usando express" });
-    });
+    const pessoa = require("../controllers/pessoa.controller.js");
+
+    //get = buscar
+    router.get("/", pessoa.getAll);
+
+    //post = criar
+
+    //put = atualizar
+
+    //delete = remover
 
     app.use('/api/pessoa', router);
 }
