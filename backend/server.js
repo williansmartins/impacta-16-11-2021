@@ -12,6 +12,9 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello World" });
 });
 
+//importar as rotas criadas
+require("./routes/pessoa.routes.js")(app);
+
 // configurando porta e ouvindo requisicoes
 const PORTA = 8080;
 app.listen(PORTA, () => {
