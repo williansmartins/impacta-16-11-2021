@@ -1,0 +1,30 @@
+### GET
+http://localhost:8080/api/pessoa
+
+
+### POST
+POST http://localhost:8080/api/pessoa HTTP/1.1
+content-type: application/json
+
+{
+    "nome" : "PEROLA NEGRA3",
+    "created_at" : "2021-11-17 16:15:46"
+}
+
+### PUT
+PUT http://localhost:8080/api/pessoa/60 HTTP/1.1
+content-type: application/json
+
+{
+    "nome" : "PEROLA NEGRA - ATUALIZADA",
+    "created_at" : "2021-11-17 16:15:46"
+}
+
+### DELETE
+DELETE http://localhost:8080/api/pessoa/60 HTTP/1.1
+content-type: application/json
+
+{
+    "nome" : "PEROLA NEGRA - ATUALIZADA",
+    "created_at" : "2021-11-17 16:15:46"
+}

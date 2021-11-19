@@ -7,10 +7,13 @@ module.exports = function(app){
     router.get("/", pessoa.getAll);
 
     //post = criar
+    router.post("/", pessoa.create);
 
     //put = atualizar
+    router.put("/:id", pessoa.update);
 
     //delete = remover
+    router.delete("/:id", pessoa.delete);
 
     app.use('/api/pessoa', router);
 }
