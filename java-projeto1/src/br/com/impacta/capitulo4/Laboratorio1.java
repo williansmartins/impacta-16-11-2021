@@ -4,7 +4,12 @@ public class Laboratorio1 {
 	
 	public static void main(String[] args) {
 		for (int i = 0; i <= 100; i++) {
-			Laboratorio1.verificarNumeroPrimoV1(i);
+			try {
+				Laboratorio1.verificarNumeroPrimoV1(i);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		//Laboratorio1.verificarNumeroPrimoV0();
@@ -32,7 +37,11 @@ public class Laboratorio1 {
 		}
 	}
 	
-	static void verificarNumeroPrimoV1(int valor) {
+	static void verificarNumeroPrimoV1(int valor)throws Exception {
+		
+		if(valor == 0 || valor == 1) {
+			throw new Exception();
+		}
 		
 		int quantidadeDeDivisoes = 0;
 		
