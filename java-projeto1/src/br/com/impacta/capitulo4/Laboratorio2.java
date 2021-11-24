@@ -1,4 +1,4 @@
-package br.com.impacta.laboratorio4;
+package br.com.impacta.capitulo4;
 
 import java.util.Scanner;
 
