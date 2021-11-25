@@ -6,9 +6,10 @@ public class Laboratorio1 {
 		for (int i = 0; i <= 100; i++) {
 			try {
 				Laboratorio1.verificarNumeroPrimoV1(i);
-			} catch (Exception e) {
+			} catch (NumeroPrimoInvalidoException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				//System.out.println("ops");
 			}
 		}
 		
@@ -37,10 +38,10 @@ public class Laboratorio1 {
 		}
 	}
 	
-	static void verificarNumeroPrimoV1(int valor)throws Exception {
+	static void verificarNumeroPrimoV1(int valor)throws NumeroPrimoInvalidoException {
 		
 		if(valor == 0 || valor == 1) {
-			throw new Exception();
+			throw new NumeroPrimoInvalidoException();
 		}
 		
 		int quantidadeDeDivisoes = 0;

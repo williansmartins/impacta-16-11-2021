@@ -1,5 +1,7 @@
 package br.com.impacta.pacote2;
 
+import com.octo.captcha.module.acegi.JCaptchaServiceProxy;
+
 public class UsaCalculadora {
 
 	public static void main(String[] args) {
@@ -12,5 +14,6 @@ public class UsaCalculadora {
 		System.out.println(valor1);
 		System.out.println(valor2);
 		System.out.println(valor3);
+		
 	}
 }
