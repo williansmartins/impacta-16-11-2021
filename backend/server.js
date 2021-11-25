@@ -1,14 +1,5 @@
-const express = require("express");
-// const bodyParser = require("body-parser"); /* deprecated */
-const cors = require("cors");
-
+const express = require("express"); //FRAMEWORK MVC
 const app = express();
-
-var corsOptions = {
-  origin: "http://localhost:8081"
-};
-
-app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(express.json()); /* bodyParser.json() is deprecated */
@@ -18,14 +9,14 @@ app.use(express.urlencoded({ extended: true })); /* bodyParser.urlencoded() is d
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Hello World" });
 });
 
-require("./routes/tutorial.routes.js")(app);
+//importar as rotas criadas
 require("./routes/pessoa.routes.js")(app);
 
 // configurando porta e ouvindo requisicoes
 const PORTA = 8080;
 app.listen(PORTA, () => {
-  console.log(`Servidor rodando na porta ${PORTA}.`);
+    console.log(`Servidor rodando na porta ${PORTA}.`);
 });
