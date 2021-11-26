@@ -35,16 +35,9 @@ public class PessoaController {
 		return repository.findAll();
 	}
 	
-	//POST localhost:8080/pessoa {data}
 	@PostMapping("")
 	public Pessoa create(@RequestBody Pessoa entrada) {
-		//inserir pessoa no banco
-		//depois
-		
-		Pessoa pessoaCriada = entrada;
-		pessoaCriada.setId(123);
-		
-		return pessoaCriada;
+		return repository.save(entrada);
 	}
 
 }
