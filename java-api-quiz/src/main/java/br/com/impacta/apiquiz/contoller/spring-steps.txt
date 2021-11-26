@@ -1,0 +1,2 @@
+- criar lista de pessoas mock
+- transformar model em entidade
