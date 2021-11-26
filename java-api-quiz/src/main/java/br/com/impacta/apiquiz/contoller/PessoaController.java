@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,6 +39,18 @@ public class PessoaController {
 		lista.add(p2);
 		
 		return lista;
+	}
+	
+	//POST localhost:8080/pessoa {data}
+	@PostMapping("")
+	public Pessoa create(Pessoa entrada) {
+		//inserir pessoa no banco
+		//depois
+		
+		Pessoa pessoaCriada = entrada;
+		pessoaCriada.setId(123);
+		
+		return pessoaCriada;
 	}
 
 }
