@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -43,7 +44,7 @@ public class PessoaController {
 	
 	//POST localhost:8080/pessoa {data}
 	@PostMapping("")
-	public Pessoa create(Pessoa entrada) {
+	public Pessoa create(@RequestBody Pessoa entrada) {
 		//inserir pessoa no banco
 		//depois
 		
