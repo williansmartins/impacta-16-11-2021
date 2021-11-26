@@ -14,7 +14,7 @@ import br.com.impacta.apiquiz.model.Pessoa;
 public class PessoaController {
 
 	//GET localhost:8080/pessoa/2
-	@GetMapping("/2")
+	@GetMapping("/1")
 	public Pessoa getA() {
 		Pessoa p1 = new Pessoa();
 		p1.setNome("Willians");
