@@ -4,3 +4,10 @@ CREATE TABLE IF NOT EXISTS `tutorials` (
   description varchar(255),
   published BOOLEAN DEFAULT false
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE IF NOT EXISTS `pessoa` (
+  id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  nome varchar(255) NOT NULL,
+  idade int
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
