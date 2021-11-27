@@ -3,6 +3,7 @@ package br.com.impacta.apiquiz.contoller;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,43 +19,34 @@ import br.com.impacta.apiquiz.repository.PessoaRepository;
 @RestController
 @RequestMapping("/pessoa")
 public class PessoaController {
-
-	private final PessoaRepository repository;
-
-	PessoaController(PessoaRepository repository) {
-		this.repository = repository;
-	}
-
+	
+	@Autowired
+	PessoaRepository repository;
+	
 	@GetMapping("")
-	public List<Pessoa> getAll() {
+	public List<Pessoa> findAll() {
 		return repository.findAll();
 	}
-
-	@GetMapping("/{id}")
-	Optional<Pessoa> one(@PathVariable Long id) {
-		return repository.findById(id);
-	}
-
+	
 	@PostMapping("")
 	public Pessoa create(@RequestBody Pessoa entrada) {
 		return repository.save(entrada);
 	}
-
+	
+	@GetMapping("/{id}")
+	public <Pessoa>Optional getOne(@PathVariable int id) {
+		return repository.findById(id);
+	}
+	
 	@DeleteMapping("/{id}")
-	void deletePessoa(@PathVariable Long id) {
+	public void delete(@PathVariable int id) {
 		repository.deleteById(id);
 	}
-
-	@PutMapping("/employees/{id}")
-	Pessoa replace(@RequestBody Pessoa novo, @PathVariable Long id) {
-
-		return repository.findById(id).map(objeto -> {
-			objeto.setNome(novo.getNome());
-			return repository.save(objeto);
-		}).orElseGet(() -> {
-			novo.setId(id);
-			return repository.save(novo);
-		});
+	
+	@PutMapping("/{id}")
+	public Pessoa update(@RequestBody Pessoa entrada, @PathVariable int id) {
+		entrada.setId(id);
+		return repository.save(entrada);
 	}
 
 }
