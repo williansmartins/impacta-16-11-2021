@@ -12,12 +12,14 @@ import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { PessoasComponent } from './pessoas/pessoas.component';
 
 registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
     AppComponent,
+    PessoasComponent,
   ],
   imports: [
     BrowserModule,
