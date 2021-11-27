@@ -1,0 +1,165 @@
+<!--====================  header area ====================-->
+<div class="header-area header-sticky bg-img space__inner--y40 background-repeat--x background-color--dark d-none d-lg-block" >
+  <!-- header top -->
+  <div class="header-top">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-4">
+                  <div class="header-top-info">
+                      <span class="header-top-info__image pr-1"><img src="assets/img/icons/phone.png" alt=""></span>
+                      <span class="header-top-info__text">(11) 9 7364-8455</span>
+                  </div>
+              </div>
+              <div class="col-lg-4 ">
+                  <div class="header-top-info text-center hide">
+                      <span class="header-top-info__image pr-1"><img src="assets/img/icons/clock.png" alt=""></span>
+                      <span class="header-top-info__text">13.00 - 20.00</span>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <div class="header-top-info text-right">
+                      <!-- <span>usuarioLogado: {{usuarioLogado}}</span> -->
+                      <!-- <span >Bem vindo: xxx</span> -->
+                      &nbsp;
+                      <a class="header-top-info__link" ><span>LOGIN</span></a>
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- menu bar -->
+  <div class="menu-bar position-relative">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="menu-bar-wrapper background-color--default space__inner--x35">
+                      <div class="menu-bar-wrapper-inner">
+                          <div class="row align-items-center">
+                              <div class="col-lg-2">
+                                  <div class="brand-logo">
+                                      <a href="index.html">
+                                          <img src="assets/img/" class="img-fluid" alt="">
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="col-lg-10">
+                                  <div class="navigation-area d-flex justify-content-end align-items-center">
+                                      <!-- navigation menu -->
+                                      <nav class="main-nav-menu">
+                                          <ul class="d-flex justify-content-end">
+                                              <li class="menu-item-has-children">
+                                                  <a routerLink="/home" routerLinkActive="active">home</a>
+                                              </li>
+                                              <li >
+                                                  <a routerLink="/pessoas" routerLinkActive="active" >Pessoas</a>
+                                              </li>
+                                              <li >
+                                                  <a routerLink="/perguntas" routerLinkActive="active" >Perguntas</a>
+                                              </li>
+                                          </ul>
+                                      </nav>
+                                      <!-- search icon nav menu -->
+                                      <div class="nav-search-icon">
+                                          <button class="header-search-toggle"><i class="fa fa-search"></i></button>
+                                          <div class="header-search-form">
+                                              <form action="#">
+                                                  <input type="text" placeholder="Type and hit enter">
+                                                  <button><i class="fa fa-search"></i></button>
+                                              </form>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!--====================  End of header area  ====================-->
+<!--====================  mobile header ====================-->
+<div class="mobile-header header-sticky bg-img space__inner--y30 background-repeat--x background-color--dark d-block d-lg-none" data-bg="assets/img/icons/ruler.png">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-6">
+              <div class="brand-logo">
+                  <a href="index.html">
+                      <img src="assets/img/logo-white.png" class="img-fluid" alt="">
+                  </a>
+              </div>
+          </div>
+          <div class="col-6">
+              <div class="mobile-menu-trigger-wrapper text-right" id="mobile-menu-trigger">
+                  <span class="mobile-menu-trigger"></span>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!--====================  End of mobile header  ====================-->
+<!--====================  offcanvas mobile menu ====================-->
+<div class="offcanvas-mobile-menu" id="mobile-menu-overlay">
+  <a href="javascript:void(0)" class="offcanvas-menu-close" id="mobile-menu-close-trigger">
+      <span class="menu-close"></span>
+  </a>
+  <div class="offcanvas-wrapper">
+      <div class="offcanvas-inner-content">
+          <div class="offcanvas-mobile-search-area">
+              <form action="#">
+                  <input type="search" placeholder="Search ...">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+          </div>
+          <nav class="offcanvas-navigation">
+              <ul>
+                  <li class="menu-item-has-children">
+                      <a routerLink="/home" routerLinkActive="active">home</a>
+                  </li>
+                  <li >
+                      <a routerLink="/pessoas" routerLinkActive="active" >Pessoas</a>
+                  </li>
+                  <li >
+                      <a routerLink="/perguntas" routerLinkActive="active" >Perguntas</a>
+                  </li>
+              </ul>
+          </nav>
+          <div class="offcanvas-widget-area">
+              <div class="off-canvas-contact-widget">
+                  <div class="header-contact-info">
+                      <ul class="header-contact-info__list">
+                          <li><i class="fa fa-phone"></i> (11) 9 7364-8455</li>
+                          <li><i class="fa fa-clock-o"></i> 13.00 - 20.00</li>
+                          <li><i class="fa fa-user"></i> 
+                          <!-- <a routerLink="/login" routerLinkActive="active">{{mostrarMenu? 'SAIR' : 'LOGIN'}}</a></li> -->
+                          <a class="header-top-info__link" ><span>LOGIN</span></a>
+                          <a class="header-top-info__link"  ><span>SAIR</span></a>
+                      </ul>
+                  </div>
+              </div>
+              <!--Off Canvas Widget Social Start-->
+              <div class="off-canvas-widget-social">
+                  <a href="#" title="Facebook"><i class="fa fa-facebook"></i></a>
+                  <a href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
+                  <a href="#" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                  <a href="#" title="Youtube"><i class="fa fa-youtube-play"></i></a>
+                  <a href="#" title="Vimeo"><i class="fa fa-vimeo-square"></i></a>
+              </div>
+              <!--Off Canvas Widget Social End-->
+          </div>
+      </div>
+  </div>
+</div>
+<!--====================  End of offcanvas mobile menu  ====================-->
+
+<div class="wrapper">
+  <router-outlet></router-outlet>
+</div>
+
+<!--====================  End of footer area  ====================-->
+<!--====================  scroll top ====================-->
+<button class="scroll-top" id="scroll-top">
+  <i class="fa fa-angle-up"></i>
+</button>
