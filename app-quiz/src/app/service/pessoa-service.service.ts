@@ -15,6 +15,10 @@ export class PessoaService {
     return this.http.post<Pessoa[]>(this.URL_API + '/pessoa', pessoa);
   }
 
+  update(pessoa: Pessoa){
+    return this.http.put<Pessoa[]>(this.URL_API + '/pessoa/' + pessoa.id, pessoa);
+  }
+
   findAll(){
     return this.http.get<Pessoa[]>(this.URL_API + '/pessoa');
   }

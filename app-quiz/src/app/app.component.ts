@@ -11,12 +11,56 @@ import { PessoaService } from './service/pessoa-service.service';
 export class AppComponent {
   displayedColumns: string[] = ['id', 'nome', 'acoes'];
   dataSource;
+  mostrarFormulario = false;
+  pessoa: Pessoa = new Pessoa();
 
   constructor(private service: PessoaService){
   }
 
   ngOnInit(): void {
     this.findAll();
+  }
+
+  editar(element) {
+    this.mostrarFormulario = true;
+    this.pessoa = element;
+  }
+
+  salvar(){
+    if(this.pessoa.id){
+      this.atualizarNoBanco();
+    }else{
+      this.criarNoBanco();
+    }
+  }
+
+  atualizarNoBanco(){
+    this.service.update(this.pessoa).subscribe( 
+      (response) => {
+        this.findAll();
+        this.mostrarFormulario = false;
+      },
+      (response) => {
+        alert("Erro!");
+      }
+    );
+  }
+
+  criarNoBanco(){
+    this.service.create(this.pessoa).subscribe( 
+      (response) => {
+        this.findAll();
+        this.mostrarFormulario = false;
+      },
+      (response) => {
+        alert("Erro!");
+      }
+    );
+  }
+
+  novaPessoa(){
+    this.mostrarFormulario = true;
+    this.pessoa = new Pessoa();
   }
 
   delete(id) {
