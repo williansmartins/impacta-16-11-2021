@@ -19,10 +19,21 @@ export class AppComponent {
     this.findAll();
   }
 
+  delete(id) {
+    this.service.delete(id).subscribe( 
+      (response) => {
+        this.findAll();
+      },
+      (response) => {
+        alert("Erro!");
+      }
+    );
+  }
+
   findAll() {
     this.service.findAll().subscribe( 
       (response) => {
-        alert('sucesso!');
+        // alert('sucesso!');
         this.dataSource = new MatTableDataSource <Pessoa> (response);
       },
       (response) => {
