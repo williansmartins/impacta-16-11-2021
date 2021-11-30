@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Pergunta } from './model/pergunta';
 import { Pessoa } from './model/pessoa';
+import { PerguntaService } from './service/pergunta-service.service';
 import { PessoaService } from './service/pessoa-service.service';
 
 @Component({
@@ -10,15 +12,18 @@ import { PessoaService } from './service/pessoa-service.service';
 })
 export class AppComponent {
   displayedColumns: string[] = ['id', 'nome', 'acoes'];
+  displayedColumnsPergunta: string[] = ['id', 'titulo', 'acoes'];
   dataSource;
+  dataSourcePergunta;
   mostrarFormulario = false;
   pessoa: Pessoa = new Pessoa();
 
-  constructor(private service: PessoaService){
+  constructor(private service: PessoaService, private servicePergunta: PerguntaService){
   }
 
   ngOnInit(): void {
     this.findAll();
+    this.findAllPergunta(); 
   }
 
   editar(element) {
@@ -79,6 +84,20 @@ export class AppComponent {
       (response) => {
         // alert('sucesso!');
         this.dataSource = new MatTableDataSource <Pessoa> (response);
+      },
+      (response) => {
+        alert("Erro!");
+      }
+    );
+  }
+
+  findAllPergunta() {
+    this.servicePergunta.findAll().subscribe( 
+      (response) => {
+        // alert('sucesso!');
+        // var perguntas = response._embedded;
+        this.dataSourcePergunta = new MatTableDataSource <Pergunta> (response._embedded.pergunta);
+        console.info(response);
       },
       (response) => {
         alert("Erro!");
