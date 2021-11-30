@@ -23,7 +23,7 @@ import br.com.impacta.apiquiz.repository.PessoaRepository;
 public class PessoaController {
 	
 	@Autowired
-	PessoaRepository repository;
+	PessoaRepository repository; 
 	
 	@GetMapping("")
 	public List<Pessoa> findAll() {

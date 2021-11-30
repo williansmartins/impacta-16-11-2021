@@ -33,11 +33,24 @@ export class AppComponent {
     this.pessoa = element;
   }
 
+  editarPergunta(element) {
+    this.mostrarFormularioPergunta = true;
+    this.pergunta = element;
+  }
+
   salvar(){
     if(this.pessoa.id){
       this.atualizarNoBanco();
     }else{
       this.criarNoBanco();
+    }
+  }
+
+  salvarPergunta(){
+    if( this.pergunta.idPublico ){
+      this.atualizarPerguntaNoBanco();
+    }else{
+      this.criarPerguntaNoBanco();
     }
   }
 
@@ -53,11 +66,35 @@ export class AppComponent {
     );
   }
 
+  atualizarPerguntaNoBanco(){
+    this.servicePergunta.update(this.pergunta).subscribe( 
+      (response) => {
+        this.findAllPergunta();
+        this.mostrarFormularioPergunta = false;
+      },
+      (response) => {
+        alert("Erro!");
+      }
+    );
+  }
+
   criarNoBanco(){
     this.service.create(this.pessoa).subscribe( 
       (response) => {
         this.findAll();
         this.mostrarFormulario = false;
+      },
+      (response) => {
+        alert("Erro!");
+      }
+    );
+  }
+
+  criarPerguntaNoBanco(){
+    this.servicePergunta.create(this.pergunta).subscribe( 
+      (response) => {
+        this.findAllPergunta();
+        this.mostrarFormularioPergunta = false;
       },
       (response) => {
         alert("Erro!");
@@ -79,6 +116,18 @@ export class AppComponent {
     this.service.delete(id).subscribe( 
       (response) => {
         this.findAll();
+      },
+      (response) => {
+        alert("Erro!");
+      }
+    );
+  }
+
+  deletePergunta(id) {
+    debugger;
+    this.servicePergunta.delete(id).subscribe( 
+      (response) => {
+        this.findAllPergunta();
       },
       (response) => {
         alert("Erro!");

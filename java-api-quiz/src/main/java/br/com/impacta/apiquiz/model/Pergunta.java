@@ -14,6 +14,7 @@ public class Pergunta {
 	private String resposta2;
 	private String resposta3;
 	private String correta;
+	private int idPublico;
 	
 	public int getId() {
 		return id;
@@ -50,6 +51,12 @@ public class Pergunta {
 	}
 	public void setCorreta(String correta) {
 		this.correta = correta;
+	}
+	public int getIdPublico() {
+		return id;
+	}
+	public void setIdPublico(int id) {
+		this.id = id;
 	}
 	
 	
