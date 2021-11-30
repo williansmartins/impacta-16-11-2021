@@ -12,11 +12,13 @@ import { PessoaService } from './service/pessoa-service.service';
 })
 export class AppComponent {
   displayedColumns: string[] = ['id', 'nome', 'acoes'];
-  displayedColumnsPergunta: string[] = ['id', 'titulo', 'acoes'];
+  displayedColumnsPergunta: string[] = ['titulo', 'acoes'];
   dataSource;
   dataSourcePergunta;
   mostrarFormulario = false;
+  mostrarFormularioPergunta = false;
   pessoa: Pessoa = new Pessoa();
+  pergunta: Pergunta = new Pergunta();
 
   constructor(private service: PessoaService, private servicePergunta: PerguntaService){
   }
@@ -66,6 +68,11 @@ export class AppComponent {
   novaPessoa(){
     this.mostrarFormulario = true;
     this.pessoa = new Pessoa();
+  }
+
+  novaPergunta(){
+    this.mostrarFormularioPergunta = true;
+    this.pergunta = new Pergunta();
   }
 
   delete(id) {
