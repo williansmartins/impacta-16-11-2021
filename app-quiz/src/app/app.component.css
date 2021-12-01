@@ -1,0 +1,8 @@
+ul li {
+  float: left;
+  list-style: none;
+  margin: 0px 10px;
+}
+ul li a {
+  color: white;
+}
