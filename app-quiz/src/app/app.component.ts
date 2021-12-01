@@ -11,6 +11,7 @@ import { PessoaService } from './service/pessoa-service.service';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
+
   displayedColumns: string[] = ['id', 'nome', 'acoes'];
   displayedColumnsPergunta: string[] = ['titulo', 'acoes'];
   dataSource;
