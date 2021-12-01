@@ -1,0 +1,10 @@
+A) criar esqueleto da aplicação
+    1) criar a aplicação angular(app-quiz)
+    2) criar arquivo de rotas (app-routing.module.ts)
+    3) criar as rotas (home)
+    4) importar o arquivo de rotas (AppRoutingModule) no módulo(app.modules)
+
+B) Gestão da entidade PESSOAS
+    1) Criar Componente PESSOAS
+    2) adicionar dependencia "@angular/material": "^11.2.13",
+    3) importar módulo do MatTableModule no módulo app

@@ -1,0 +1,7 @@
+- criar lista de pessoas mock
+- adicionar a dependencia do jpa no projeto
+- transformar model em entidade
+- criar o repository
+- injetar o repository na controller
+- add dados de acesso a base
+- adicionar dependencia do mysql
