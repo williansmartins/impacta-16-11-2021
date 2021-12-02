@@ -1,11 +1,9 @@
 package br.com.impacta.apiquiz.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Pergunta {
@@ -19,8 +17,8 @@ public class Pergunta {
 	private String resposta3;
 	private String correta;
 	
-	@ManyToMany(mappedBy = "pergunta")
-	private List<Historico> historico;
+	@ManyToOne
+	private Historico historico;
 
 	public int getId() {
 		return id;
@@ -70,12 +68,12 @@ public class Pergunta {
 		this.correta = correta;
 	}
 
-	public List<Historico> getHistorico() {
+	public Historico getHistorico() {
 		return historico;
 	}
 
-	public void setHistorico(List<Historico> historico) {
+	public void setHistorico(Historico historico) {
 		this.historico = historico;
 	}
-	
+
 }
