@@ -1,12 +1,14 @@
 package br.com.impacta.apiquiz.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Historico {
@@ -17,15 +19,17 @@ public class Historico {
 
 	private String execucao;
 
-	@JsonManagedReference
-	@OneToOne
-	@JoinColumn(name = "pessoa_id", referencedColumnName = "id")
-	private Pessoa pessoa;
+	@ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "historico_pessoa", 
+      joinColumns = @JoinColumn(name = "historico_id", referencedColumnName = "id"), 
+      inverseJoinColumns = @JoinColumn(name = "pessoa_id", referencedColumnName = "id"))
+	private List<Pessoa> pessoa;
 
-	@JsonManagedReference
-	@OneToOne
-	@JoinColumn(name = "pergunta_id", referencedColumnName = "id")
-	private Pergunta pergunta;
+	@ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "historico_pergunta", 
+      joinColumns = @JoinColumn(name = "historico_id", referencedColumnName = "id"), 
+      inverseJoinColumns = @JoinColumn(name = "pergunta_id", referencedColumnName = "id"))
+	private List<Pergunta> pergunta;
 
 	private int resposta;
 
@@ -36,21 +40,21 @@ public class Historico {
 	public void setExecucao(String execucao) {
 		this.execucao = execucao;
 	}
-
-	public Pergunta getPergunta() {
-		return pergunta;
-	}
-
-	public void setPergunta(Pergunta pergunta) {
-		this.pergunta = pergunta;
-	}
-
-	public Pessoa getPessoa() {
+	
+	public List<Pessoa> getPessoa() {
 		return pessoa;
 	}
 
-	public void setPessoa(Pessoa pessoa) {
+	public void setPessoa(List<Pessoa> pessoa) {
 		this.pessoa = pessoa;
+	}
+
+	public List<Pergunta> getPergunta() {
+		return pergunta;
+	}
+
+	public void setPergunta(List<Pergunta> pergunta) {
+		this.pergunta = pergunta;
 	}
 
 	public int getResposta() {

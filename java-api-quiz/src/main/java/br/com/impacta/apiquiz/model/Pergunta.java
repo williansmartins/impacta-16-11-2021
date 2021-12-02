@@ -1,11 +1,11 @@
 package br.com.impacta.apiquiz.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Pergunta {
@@ -19,9 +19,8 @@ public class Pergunta {
 	private String resposta3;
 	private String correta;
 	
-	@JsonBackReference
-	@OneToOne(mappedBy = "pergunta")
-	private Historico historico;
+	@ManyToMany(mappedBy = "pergunta")
+	private List<Historico> historico;
 
 	public int getId() {
 		return id;
@@ -71,4 +70,12 @@ public class Pergunta {
 		this.correta = correta;
 	}
 
+	public List<Historico> getHistorico() {
+		return historico;
+	}
+
+	public void setHistorico(List<Historico> historico) {
+		this.historico = historico;
+	}
+	
 }
