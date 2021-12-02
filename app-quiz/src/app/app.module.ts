@@ -10,10 +10,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { SimuladoComponent } from './simulado/simulado.component';
+import { CrudPessoaComponent } from './crud-pessoa/crud-pessoa.component';
+import { CrudPerguntaComponent } from './crud-pergunta/crud-pergunta.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SimuladoComponent,
+    CrudPessoaComponent,
+    CrudPerguntaComponent
   ],
   imports: [
     BrowserModule,
